@@ -14,9 +14,7 @@ Anaconda installed （ with all requirements met for using Theano）
 
 `LogisticRegression`  
 Optimization complete with best validation score of 7.145833 %,with test performance 7.354167 %  
-
 The code run for 178 epochs, with 20.405116 epochs/sec  
-
 The code for file logistic.py ran for 8.7s  
 
 `MLP`  
