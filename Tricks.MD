@@ -6,7 +6,7 @@ So, if we want to use a GPU, we'd better store the data into GPU, since copying 
 , copying each minibatch everytime is need (if the data is not in a shared variable, that would lead to a large decrease in performance.  
 ```python
 self.W = theano.shared(value=W_value,name='W', borrow=True)
-
+```
 2. **float32**
 > Material below from Theano tutorial
 "When using the GPU, **float32** tensor shared variables are stored on the GPU by default to elimate transfer time for GPU ops using those variables.  
@@ -18,3 +18,4 @@ W_value = numpy.asarray(
     ),
     dtype=theano.config.floatX
 )
+```
