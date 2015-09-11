@@ -5,6 +5,8 @@ Logistic Regression
 From 
 Deep Learning Tutorial
 
+function load_data has beed modified to just load data locally
+
 @Wahah
 """
 
