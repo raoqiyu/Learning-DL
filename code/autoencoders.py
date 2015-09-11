@@ -99,12 +99,12 @@ class dA(object):
 
         if not bvis:
             bvis = theano.shared(
-                value=numpy.zeros(n_visible,dtye=theano.config.floatX),
+                value=numpy.zeros(n_visible,dtype=theano.config.floatX),
                 borrow=True
             )
         if not bhid:
             bhid = theano.shared(
-                value=numpy.zeros(n_hidden,dtye=theano.config.floatX),
+                value=numpy.zeros(n_hidden,dtype=theano.config.floatX),
                 name='b', borrow=True
             )
 
@@ -189,7 +189,7 @@ def testdA(learning_rate=0.1, training_epochs=15, dataset='mnist.pkl.gz',
     index = T.lscalar()
     x = T.matrix('x')
     if not os.path.isdir(output_folder):
-        os.mkdirs(output_folder)
+        os.makedirs(output_folder)
     os.chdir(output_folder)
 
     print('Building the Model With No Corruption '+'.'*20)
@@ -211,9 +211,9 @@ def testdA(learning_rate=0.1, training_epochs=15, dataset='mnist.pkl.gz',
 
     train_da = theano.function(
         inputs=[index],
-        ouputs=cost,
+        outputs=cost,
         updates=updates,
-        given={
+        givens={
             x: trainSetX[index*batch_size:(index+1)*batch_size]
         }
     )
