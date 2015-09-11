@@ -13,6 +13,10 @@ import numpy
 import time
 import sys
 
+
+# My local congif in ~/.theanorc floatX=float32.
+# to use float64 in this file, change first
+# or we get an error
 theano.config.floatX = 'float64'
 #%%
 # The Convolution Operator
