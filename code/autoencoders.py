@@ -263,9 +263,9 @@ def testdA(learning_rate=0.1, training_epochs=15, dataset='mnist.pkl.gz',
 
     train_da = theano.function(
         inputs=[index],
-        ouputs=cost,
+        outputs=cost,
         updates=updates,
-        given={
+        givens={
             x: trainSetX[index*batch_size:(index+1)*batch_size]
         }
     )
