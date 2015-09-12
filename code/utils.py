@@ -9,12 +9,11 @@ import numpy
 
 
 def scale_to_unit_interval(ndar, eps=1e-8):
-    """Scale all values in the ndarray ndar to be between 0 and 1
-    """
-    ndar = ndar.copy()
-    ndar -= ndar.min()
-    ndar *= 1.0/(ndar.max() + eps)
-
+	"""Scale all values in the ndarray ndar to be between 0 and 1"""
+	ndar = ndar.copy()
+	ndar -= ndar.min()
+	ndar *= 1.0/(ndar.max() + eps)
+	return ndar
 
 def tile_raster_images(X, img_shape, tile_shape, tile_spacing=(0,0),
                        scale_rowsto_unit_interval=True,output_pixel_vals=True):
