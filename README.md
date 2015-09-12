@@ -26,3 +26,8 @@ The code for file mlp.py ran for 1429.3s
 Best validation score of 1.010000 % obtained at iteration 11400,  with test performance 0.940000 %  
 The code for file convolutional_mlp.py ran for 259.7s  
 
+`Denoising Autoencoders`  
+Training epoch 2499, cost  49.4413  
+The no corruption code for file autoencoders.py ran for 5514.08s  
+Training epoch 2499, cost  63.2158  
+The 30% corruption code for file autoencoders.py ran for 5832.02s  
