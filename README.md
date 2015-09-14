@@ -31,3 +31,11 @@ Training epoch 2499, cost  49.4413
 The no corruption code for file autoencoders.py ran for 5514.08s  
 Training epoch 2499, cost  63.2158  
 The 30% corruption code for file autoencoders.py ran for 5832.02s  
+
+`Stacked Denoising Autoencoders`  
+Optimization complete with best validation score of 0.015100 %, on iteration 1650000, with test performance 1.400000 %  
+The training code for file sdA.py ran for 3056.26s  
+
+`Stacked Denoising Autoencoders`  
+learning epoch 79 >> 100%  completed in 29.53 (sec) << 
+BEST RESULT: epoch 59 valid F1 97.05 best test F1 94.08 with the model rnnslu
