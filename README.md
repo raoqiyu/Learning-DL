@@ -39,3 +39,8 @@ The training code for file sdA.py ran for 3056.26s
 `Recurrent Neural Network`  
 learning epoch 79 >> 100%  completed in 29.53 (sec) <<   
 BEST RESULT: epoch 59 valid F1 97.05 best test F1 94.08 with the model rnnslu
+
+`Long Short Term Memory`  
+Train  0.0235235235235 Valid  0.171428571429 Test  0.19
+The code run for 74 epochs, with 6.824690 sec/epochs
+Training took 505.0s
