@@ -21,8 +21,7 @@ diverge.
 
 Memory Cells:
     - A neuron with a self-recurrent connection: a connection to itself,
-        has a weight of 1.0 (can remain constant from one timestep from another.
-                    )
+        has a weight of 1.0 (can remain constant from one timestep to another.)
     - Input  Gate: allow incoming signal to alter the state of the memory cell
          or block it
     - Output Gate: allow the state of the memory cell to have an effect on other
@@ -31,27 +30,33 @@ Memory Cells:
         the cell to remember or forget its previous state, as needed.
 
 Equations:
-x(t) is the input to the memory cell layer at time t
+x(t) is the input to the memory cell at time t
+i(t) is the Input Gate status at time t
+c(t) is the memory cell status at time t
+o(t) is the Output Gate status at time t
+f(t) is the Forget Gate statue at time t
+h(t) is the memory cell's output at time t
+
 Wi, Wf, Wc, Wo, Ui, Uf, Uc, Uo and Vo  are weight matrices
 bi, bf, bc and bo are bias vectors
 
     i(t)  = sigmoid( Wi*x(t) + Ui*h(t-1) + bi)
-    C'(t) = tanh( Wc*x(t) + Uc*h(t-1) + bc)
+    c'(t) = tanh( Wc*x(t) + Uc*h(t-1) + bc)
     f(t)  = sigmoid( Wf*x(t) + Uf*h(t-1) + bf)
 
-    C(t)  = i(t) * C'(t) + ft * C(t-1)
-    o(t)  = sigmoid(Wo*x(t) + Uo*h(t-1) + Vo*C(t) + bo)
+    c(t)  = i(t) * c'(t) + ft * c(t-1)
+    o(t)  = sigmoid(Wo*x(t) + Uo*h(t-1) + Vo*c(t) + bo)
     # o(t)  = sigmoid(Wo*x(t) + Uo*h(t-1) + bo)
-    h(t)  = ot * tanh(C(t))
+    h(t)  = ot * tanh(c(t))
 
 
 Implementation Note:
 We can concatentate the four matrices W* into a single weight matrix W and
 performing the same concatenation on the weight matrices U* to produce the matrix
-U and the bias vectors b* to produce the vector b, Then
+U and the bias vectors b* to produce the vector b. Then
     z = sigmoid( W*x(t) + U*h(t-1) + b).
 The result is then sliced to obtain the pre-nonlinearity activations for i(t),
-f(t), C'(t) and o(t).
+f(t), c'(t) and o(t).
 
 
 @author: wahah
